@@ -14,16 +14,16 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 text-center space-y-6">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 text-neutral-500">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-50 text-primary-800 border border-primary-100">
           <ShoppingBag className="h-8 w-8" />
         </div>
         <div className="space-y-2">
-          <h2 className="text-2xl font-bold uppercase tracking-wider text-black">Your Cart is Empty</h2>
+          <h2 className="text-2xl font-bold uppercase tracking-wider text-primary-900">Your Cart is Empty</h2>
           <p className="text-sm text-neutral-500">Looks like you haven't added any watches to your cart yet.</p>
         </div>
         <Link
           to="/shop"
-          className="inline-flex items-center rounded-full bg-black px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors"
+          className="inline-flex items-center rounded-full bg-primary-800 px-6 py-3 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md animate-bounce"
         >
           Explore collection
         </Link>
@@ -99,21 +99,21 @@ const Cart = () => {
         </section>
 
         {/* Order Summary Card */}
-        <section className="mt-8 lg:mt-0 lg:col-span-4 border border-neutral-100 bg-neutral-50 p-6 rounded">
-          <h2 className="text-xs font-bold uppercase tracking-wider text-black border-b border-neutral-200 pb-3">Order Summary</h2>
+        <section className="mt-8 lg:mt-0 lg:col-span-4 border border-primary-100 bg-primary-950/5 p-6 rounded">
+          <h2 className="text-xs font-bold uppercase tracking-wider text-primary-900 border-b border-primary-100 pb-3">Order Summary</h2>
           
           <div className="mt-4 space-y-4">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-neutral-500">Subtotal</span>
-              <span className="font-medium text-black">₹{cartTotal.toLocaleString('en-IN')}</span>
+              <span className="text-neutral-550">Subtotal</span>
+              <span className="font-bold text-primary-900">₹{cartTotal.toLocaleString('en-IN')}</span>
             </div>
             
             <div className="flex items-center justify-between text-sm">
-              <span className="text-neutral-500">Shipping</span>
-              <span className="font-medium text-green-700">Free</span>
+              <span className="text-neutral-550">Shipping</span>
+              <span className="font-semibold text-primary-800">Free</span>
             </div>
 
-            <div className="border-t border-neutral-200 pt-4 flex items-center justify-between text-base font-bold text-black">
+            <div className="border-t border-primary-100 pt-4 flex items-center justify-between text-base font-bold text-primary-900">
               <span>Total Price</span>
               <span>₹{cartTotal.toLocaleString('en-IN')}</span>
             </div>
@@ -122,14 +122,14 @@ const Cart = () => {
           <div className="mt-6">
             <button
               onClick={handleCheckout}
-              className="w-full flex items-center justify-center rounded-full bg-black py-4 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors"
+              className="w-full flex items-center justify-center rounded-full bg-primary-800 py-4 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md"
             >
-              Checkout Order <ArrowRight className="ml-2 h-4 w-4" />
+              Checkout Order <ArrowRight className="ml-2 h-4 w-4 text-gold-450" />
             </button>
           </div>
 
           <div className="mt-4 text-center">
-            <Link to="/shop" className="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-black underline">
+            <Link to="/shop" className="text-xs font-bold uppercase tracking-wider text-primary-800 hover:text-gold-500 transition-colors underline">
               Continue Shopping
             </Link>
           </div>

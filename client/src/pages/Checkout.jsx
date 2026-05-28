@@ -170,11 +170,10 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
 
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        {/* Shipping Form & Addresses */}
         <section className="lg:col-span-7 space-y-6">
-          <div className="border border-neutral-100 bg-white p-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-black border-b border-neutral-100 pb-3 flex items-center">
-              <MapPin className="mr-2 h-4.5 w-4.5" /> Shipping Address
+          <div className="border border-primary-100 bg-white p-6 rounded shadow-sm">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-primary-900 border-b border-primary-100 pb-3 flex items-center">
+              <MapPin className="mr-2 h-4.5 w-4.5 text-gold-500" /> Shipping Address
             </h2>
 
             {/* Existing Addresses List */}
@@ -183,10 +182,10 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
                 {user.addresses.map((addr) => (
                   <label
                     key={addr._id}
-                    className={`flex items-start p-4 border rounded cursor-pointer transition-all ${
+                    className={`flex items-start p-4 border rounded cursor-pointer transition-all duration-200 ${
                       selectedAddressId === addr._id
-                        ? 'border-black bg-neutral-50/50'
-                        : 'border-neutral-200 hover:border-neutral-400'
+                        ? 'border-gold-500 bg-primary-50/20 ring-1 ring-gold-500/50 shadow-sm'
+                        : 'border-neutral-200 hover:border-primary-100 hover:bg-neutral-50/50'
                     }`}
                   >
                     <input
@@ -195,32 +194,32 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
                       value={addr._id}
                       checked={selectedAddressId === addr._id}
                       onChange={() => setSelectedAddressId(addr._id)}
-                      className="mt-1 h-4 w-4 border-neutral-300 text-black focus:ring-black"
+                      className="mt-1 h-4 w-4 border-neutral-300 text-primary-850 focus:ring-gold-500"
                     />
                     <div className="ml-3 text-sm">
-                      <span className="font-bold text-neutral-900 flex items-center gap-2">
+                      <span className="font-bold text-primary-900 flex items-center gap-2">
                         {addr.fullName}
                         {addr.isDefault && (
-                          <span className="bg-neutral-200 text-neutral-700 text-[9px] font-bold uppercase px-1.5 py-0.5 rounded">Default</span>
+                          <span className="bg-primary-805 text-gold-100 text-[9px] font-bold uppercase px-1.5 py-0.5 rounded border border-gold-500/20">Default</span>
                         )}
                       </span>
-                      <p className="mt-1 text-neutral-500">{addr.street}, {addr.city}, {addr.state} - {addr.pincode}</p>
-                      <p className="mt-1 text-xs text-neutral-400 flex items-center"><Phone className="mr-1 h-3.5 w-3.5" /> {addr.phone}</p>
+                      <p className="mt-1 text-neutral-600">{addr.street}, {addr.city}, {addr.state} - {addr.pincode}</p>
+                      <p className="mt-1 text-xs text-neutral-500 flex items-center"><Phone className="mr-1 h-3.5 w-3.5 text-gold-500" /> {addr.phone}</p>
                     </div>
                   </label>
                 ))}
               </div>
             ) : (
-              <p className="mt-4 text-sm text-neutral-500">No address saved. Please add a shipping address below.</p>
+              <p className="mt-4 text-sm text-neutral-550">No address saved. Please add a shipping address below.</p>
             )}
 
             {/* Add New Address Action Button */}
             {!showAddressForm && (
               <button
                 onClick={() => setShowAddressForm(true)}
-                className="mt-5 flex items-center text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-black transition-colors"
+                className="mt-5 flex items-center text-xs font-bold uppercase tracking-wider text-primary-800 hover:text-gold-500 transition-colors duration-250"
               >
-                <PlusCircle className="mr-1.5 h-4.5 w-4.5" /> Add New Address
+                <PlusCircle className="mr-1.5 h-4.5 w-4.5 text-gold-500" /> Add New Address
               </button>
             )}
 
@@ -321,13 +320,13 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
                   <button
                     type="button"
                     onClick={() => setShowAddressForm(false)}
-                    className="border border-neutral-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:border-black hover:text-black"
+                    className="border border-neutral-200 px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-650 hover:border-primary-800 hover:text-primary-800 transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="bg-black px-4 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800"
+                    className="bg-primary-800 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors"
                   >
                     Save Address
                   </button>
@@ -337,9 +336,9 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
           </div>
 
           {/* Delivery Note */}
-          <div className="border border-neutral-100 bg-white p-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-black border-b border-neutral-100 pb-3 flex items-center">
-              <MessageSquare className="mr-2 h-4.5 w-4.5" /> Order Notes (Optional)
+          <div className="border border-primary-100 bg-white p-6 rounded shadow-sm">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-primary-900 border-b border-primary-100 pb-3 flex items-center">
+              <MessageSquare className="mr-2 h-4.5 w-4.5 text-gold-500" /> Order Notes (Optional)
             </h2>
             <textarea
               placeholder="E.g., Please delivery after 4:00 PM / Call before delivery."
@@ -351,11 +350,10 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
           </div>
         </section>
 
-        {/* Order Summary & Payment Button */}
         <section className="lg:col-span-5 space-y-6">
-          <div className="border border-neutral-100 bg-white p-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-black border-b border-neutral-100 pb-3 flex items-center">
-              <ShoppingBag className="mr-2 h-4.5 w-4.5" /> Items Summary
+          <div className="border border-primary-100 bg-white p-6 rounded shadow-sm">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-primary-900 border-b border-primary-100 pb-3 flex items-center">
+              <ShoppingBag className="mr-2 h-4.5 w-4.5 text-gold-500" /> Items Summary
             </h2>
             
             {/* Products inside Cart */}
@@ -363,29 +361,29 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
               {cartItems.map((item) => (
                 <li key={item.product} className="flex py-3 justify-between items-center text-sm">
                   <div className="flex items-center space-x-3">
-                    <img src={item.image} alt="" className="h-10 w-10 object-cover border border-neutral-100 rounded" />
+                    <img src={item.image} alt="" className="h-10 w-10 object-cover border border-primary-100 rounded" />
                     <div>
-                      <h4 className="font-medium text-neutral-900 line-clamp-1">{item.name}</h4>
-                      <p className="text-xs text-neutral-400">Qty: {item.quantity} x ₹{item.price.toLocaleString('en-IN')}</p>
+                      <h4 className="font-semibold text-primary-900 line-clamp-1">{item.name}</h4>
+                      <p className="text-xs text-neutral-500">Qty: {item.quantity} x ₹{item.price.toLocaleString('en-IN')}</p>
                     </div>
                   </div>
-                  <span className="font-bold text-black">
+                  <span className="font-bold text-primary-900">
                     ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6 border-t border-neutral-100 pt-4 space-y-3">
+            <div className="mt-6 border-t border-primary-100 pt-4 space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-neutral-500">Order Subtotal</span>
-                <span className="font-medium text-black">₹{cartTotal.toLocaleString('en-IN')}</span>
+                <span className="text-neutral-550">Order Subtotal</span>
+                <span className="font-semibold text-primary-900">₹{cartTotal.toLocaleString('en-IN')}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-neutral-500">Shipping Delivery</span>
-                <span className="font-medium text-green-700">Free</span>
+                <span className="text-neutral-550">Shipping Delivery</span>
+                <span className="font-semibold text-primary-800">Free</span>
               </div>
-              <div className="border-t border-neutral-200 pt-3 flex items-center justify-between text-base font-bold text-black">
+              <div className="border-t border-primary-100 pt-3 flex items-center justify-between text-base font-bold text-primary-900">
                 <span>Grand Total</span>
                 <span>₹{cartTotal.toLocaleString('en-IN')}</span>
               </div>
@@ -393,21 +391,21 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
           </div>
 
           {/* Checkout Button */}
-          <div className="border border-neutral-100 bg-neutral-50 p-6 rounded text-center">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-black">Ordering Process</h3>
-            <p className="mt-2 text-xs text-neutral-500">
+          <div className="border border-primary-100 bg-primary-950/5 p-6 rounded text-center">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-primary-900 border-b border-primary-100/30 pb-2">Ordering Process</h3>
+            <p className="mt-2.5 text-xs text-neutral-600 leading-relaxed">
               Your order details will be stored in our database, and we'll redirect you to WhatsApp to instantly confirm the shipment with our team.
             </p>
             <button
               onClick={handlePlaceOrder}
               disabled={isSubmitting}
-              className="mt-5 w-full flex items-center justify-center rounded-full bg-green-600 py-4 text-xs font-bold uppercase tracking-wider text-white hover:bg-green-700 transition-colors disabled:opacity-55 disabled:cursor-not-allowed"
+              className="mt-5 w-full flex items-center justify-center rounded-full bg-green-600 py-4 text-xs font-bold uppercase tracking-wider text-white hover:bg-green-700 hover:scale-[1.02] transition-all duration-200 shadow-md shadow-green-600/10 disabled:opacity-55 disabled:cursor-not-allowed"
             >
               <CheckCircle2 className="mr-2 h-5 w-5" />
               {isSubmitting ? 'Processing Order...' : 'Order Via WhatsApp'}
             </button>
             <div className="mt-4">
-              <Link to="/cart" className="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-black underline">
+              <Link to="/cart" className="text-xs font-bold uppercase tracking-wider text-primary-800 hover:text-gold-550 transition-colors underline">
                 Edit Cart Items
               </Link>
             </div>

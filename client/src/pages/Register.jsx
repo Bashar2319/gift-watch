@@ -125,17 +125,17 @@ const Register = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex items-center justify-center rounded-full bg-black py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors disabled:opacity-50"
+            className="w-full flex items-center justify-center rounded-full bg-primary-800 py-3 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors disabled:opacity-50 shadow-sm animate-pulse"
           >
-            {isSubmitting ? 'Registering...' : 'Register'} <ArrowRight className="ml-1.5 h-4 w-4" />
+            {isSubmitting ? 'Registering...' : 'Register'} <ArrowRight className="ml-1.5 h-4 w-4 text-gold-400" />
           </button>
         </form>
 
         {/* Links */}
-        <div className="border-t border-neutral-100 pt-4 text-center text-xs text-neutral-500 space-y-2">
+        <div className="border-t border-neutral-150 pt-4 text-center text-xs text-neutral-500 space-y-2">
           <p>
             Already have an account?{' '}
-            <Link to="/login" className="font-bold text-black hover:underline">
+            <Link to="/login" className="font-bold text-primary-850 hover:text-gold-650 transition-colors hover:underline">
               Log In Here
             </Link>
           </p>

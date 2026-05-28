@@ -144,14 +144,16 @@ const Shop = () => {
 
           {/* Categories */}
           <div className="space-y-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-black">Categories</h3>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-primary-900">Categories</h3>
             <div className="flex flex-col space-y-1.5">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => updateParam('category', cat)}
-                  className={`text-left text-sm py-0.5 transition-colors ${
-                    category === cat ? 'font-bold text-black' : 'text-neutral-500 hover:text-black'
+                  className={`text-left text-sm py-1 transition-all duration-200 ${
+                    category === cat 
+                      ? 'font-bold text-primary-800 border-l-2 border-gold-500 pl-2' 
+                      : 'text-neutral-555 hover:text-gold-500 pl-2 hover:translate-x-0.5'
                   }`}
                 >
                   {cat}
@@ -183,14 +185,14 @@ const Shop = () => {
             <div className="flex space-x-2 pt-1">
               <button
                 type="submit"
-                className="w-full rounded bg-black py-1.5 text-center text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800"
+                className="w-full rounded bg-primary-800 py-1.5 text-center text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 hover:text-white transition-colors"
               >
                 Apply
               </button>
               <button
                 type="button"
                 onClick={handleClearFilters}
-                className="w-full rounded border border-neutral-200 py-1.5 text-center text-xs font-bold uppercase tracking-wider text-neutral-600 hover:border-black hover:text-black"
+                className="w-full rounded border border-neutral-200 py-1.5 text-center text-xs font-bold uppercase tracking-wider text-neutral-600 hover:border-primary-850 hover:text-primary-850 transition-colors"
               >
                 Reset
               </button>
@@ -273,8 +275,8 @@ const Shop = () => {
                   onClick={() => handlePageChange(pNum)}
                   className={`px-4 py-2 border rounded text-sm transition-all ${
                     page === pNum
-                      ? 'bg-black border-black text-white font-bold'
-                      : 'border-neutral-200 text-neutral-600 hover:border-black'
+                      ? 'bg-primary-800 border-primary-800 text-gold-100 font-bold shadow-sm'
+                      : 'border-neutral-200 text-neutral-650 hover:border-gold-500 hover:text-gold-600'
                   }`}
                 >
                   {pNum}
@@ -325,14 +327,16 @@ const Shop = () => {
 
               {/* Categories */}
               <div className="space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-black">Categories</h3>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-primary-900">Categories</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {categories.map((cat) => (
                     <button
                       key={cat}
                       onClick={() => updateParam('category', cat)}
-                      className={`text-center text-xs py-2 border rounded ${
-                        category === cat ? 'bg-black border-black text-white font-bold' : 'border-neutral-200 text-neutral-600'
+                      className={`text-center text-xs py-2 border rounded transition-all duration-250 ${
+                        category === cat 
+                          ? 'bg-primary-800 border-primary-800 text-gold-100 font-bold' 
+                          : 'border-neutral-200 text-neutral-600 hover:border-primary-100'
                       }`}
                     >
                       {cat}
@@ -365,14 +369,14 @@ const Shop = () => {
                 <div className="flex space-x-2 pt-2">
                   <button
                     type="submit"
-                    className="w-full rounded bg-black py-2.5 text-center text-xs font-bold uppercase tracking-wider text-white"
+                    className="w-full rounded bg-primary-800 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900"
                   >
                     Apply Filters
                   </button>
                   <button
                     type="button"
                     onClick={handleClearFilters}
-                    className="w-full rounded border border-neutral-200 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-neutral-600"
+                    className="w-full rounded border border-neutral-200 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-neutral-600 hover:border-primary-800 hover:text-primary-800"
                   >
                     Clear All
                   </button>

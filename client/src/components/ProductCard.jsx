@@ -30,18 +30,18 @@ const ProductCard = ({ product }) => {
         {/* Badges */}
         <div className="absolute top-2 left-2 flex flex-col gap-1.5">
           {outOfStock ? (
-            <span className="bg-black text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1">
+            <span className="bg-neutral-950 text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1 rounded shadow-sm">
               Out of stock
             </span>
           ) : (
             <>
               {product.isTrending && (
-                <span className="bg-neutral-800 text-[10px] font-bold uppercase tracking-wider text-white px-2 py-0.5 w-max">
+                <span className="bg-primary-800 text-[10px] font-extrabold uppercase tracking-widest text-gold-300 px-2.5 py-1 w-max rounded shadow-sm border border-gold-500/20">
                   Trending
                 </span>
               )}
               {discount > 0 && (
-                <span className="bg-red-600 text-[10px] font-bold uppercase tracking-wider text-white px-2 py-0.5 w-max">
+                <span className="bg-red-600 text-[10px] font-bold uppercase tracking-wider text-white px-2.5 py-1 w-max rounded shadow-sm">
                   -{discount}%
                 </span>
               )}
@@ -52,24 +52,24 @@ const ProductCard = ({ product }) => {
 
       {/* Info */}
       <div className="flex flex-1 flex-col p-4">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-gold-600">
           {product.brand}
         </span>
-        <h3 className="mt-1 text-sm font-medium text-neutral-900 line-clamp-1 hover:text-black">
+        <h3 className="mt-1 text-sm font-semibold text-neutral-900 line-clamp-1 hover:text-primary-850">
           <Link to={`/product/${product._id}`}>{product.name}</Link>
         </h3>
         
         {/* Category */}
-        <span className="mt-1 text-xs text-neutral-500">{product.category}</span>
+        <span className="mt-1 text-xs text-neutral-500 font-medium">{product.category}</span>
 
         {/* Price & Cart button */}
         <div className="mt-auto pt-4 flex items-center justify-between">
           <div className="flex items-baseline space-x-2">
-            <span className="text-sm font-bold text-black">
+            <span className="text-sm font-extrabold text-primary-900">
               ₹{product.price.toLocaleString('en-IN')}
             </span>
             {product.originalPrice > product.price && (
-              <span className="text-xs text-neutral-400 line-through">
+              <span className="text-xs text-neutral-450 line-through">
                 ₹{product.originalPrice.toLocaleString('en-IN')}
               </span>
             )}
@@ -78,10 +78,10 @@ const ProductCard = ({ product }) => {
           <button
             onClick={() => !outOfStock && addToCart(product, 1)}
             disabled={outOfStock}
-            className={`p-2 rounded-full border transition-colors ${
+            className={`p-2 rounded-full border transition-all duration-300 shadow-sm ${
               outOfStock
                 ? 'border-neutral-200 text-neutral-300 cursor-not-allowed'
-                : 'border-neutral-200 text-neutral-700 hover:bg-black hover:text-white hover:border-black'
+                : 'border-primary-100 text-primary-800 hover:bg-primary-800 hover:text-gold-100 hover:border-primary-800'
             }`}
             title={outOfStock ? 'Out of Stock' : 'Add to Cart'}
           >

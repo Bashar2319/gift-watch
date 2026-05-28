@@ -132,7 +132,7 @@ const ProductDetails = () => {
 
           {/* Pricing */}
           <div className="flex items-baseline space-x-3 border-y border-neutral-100 py-4">
-            <span className="text-2xl font-bold text-black">
+            <span className="text-2xl font-bold text-primary-900">
               ₹{product.price.toLocaleString('en-IN')}
             </span>
             {product.originalPrice > product.price && (
@@ -140,7 +140,7 @@ const ProductDetails = () => {
                 <span className="text-neutral-400 line-through">
                   ₹{product.originalPrice.toLocaleString('en-IN')}
                 </span>
-                <span className="bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                <span className="bg-red-50 text-red-750 text-xs font-bold uppercase tracking-wider px-2 py-0.5 border border-red-200 rounded">
                   Save {discount}%
                 </span>
               </>
@@ -150,15 +150,15 @@ const ProductDetails = () => {
           {/* Stock Info */}
           <div>
             {outOfStock ? (
-              <span className="inline-block bg-black text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5">
+              <span className="inline-block bg-neutral-950 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded shadow-sm">
                 Out of Stock
               </span>
             ) : isLowStock ? (
-              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded">
+              <span className="inline-block bg-amber-50 text-amber-800 text-xs font-semibold px-3 py-1 border border-amber-200 rounded">
                 Only {product.stock} left in stock - order soon!
               </span>
             ) : (
-              <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded">
+              <span className="inline-block bg-primary-50 text-primary-800 text-xs font-semibold px-3 py-1 border border-primary-200 rounded animate-pulse">
                 In Stock (Ready to dispatch)
               </span>
             )}
@@ -166,7 +166,7 @@ const ProductDetails = () => {
 
           {/* Description */}
           <div className="space-y-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-black">Product Details</h3>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-primary-900">Product Details</h3>
             <p className="text-sm text-neutral-600 leading-relaxed whitespace-pre-line">{product.description}</p>
           </div>
 
@@ -174,18 +174,18 @@ const ProductDetails = () => {
           {!outOfStock && (
             <div className="space-y-4 pt-4 border-t border-neutral-100">
               <div className="flex items-center space-x-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-black">Quantity</span>
-                <div className="flex items-center border border-neutral-200">
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-700">Quantity</span>
+                <div className="flex items-center border border-neutral-200 rounded">
                   <button
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                    className="px-3 py-1 text-neutral-500 hover:text-black"
+                    className="px-3 py-1 text-neutral-550 hover:text-primary-800 font-semibold"
                   >
                     -
                   </button>
-                  <span className="px-3 text-sm font-semibold">{quantity}</span>
+                  <span className="px-3 text-sm font-semibold text-neutral-800">{quantity}</span>
                   <button
                     onClick={() => setQuantity((q) => Math.min(product.stock, q + 1))}
-                    className="px-3 py-1 text-neutral-500 hover:text-black"
+                    className="px-3 py-1 text-neutral-550 hover:text-primary-800 font-semibold"
                   >
                     +
                   </button>
@@ -194,25 +194,25 @@ const ProductDetails = () => {
 
               <button
                 onClick={() => addToCart(product, quantity)}
-                className="w-full flex items-center justify-center rounded-full bg-black py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-neutral-800 transition-colors"
+                className="w-full flex items-center justify-center rounded-full bg-primary-800 py-4 text-sm font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md"
               >
-                <ShoppingBag className="mr-2 h-5 w-5" /> Add to Cart
+                <ShoppingBag className="mr-2 h-5 w-5 text-gold-400" /> Add to Cart
               </button>
             </div>
           )}
 
           {/* Trust points */}
-          <div className="mt-4 grid grid-cols-1 gap-2 pt-4 border-t border-neutral-100 text-xs text-neutral-500">
+          <div className="mt-4 grid grid-cols-1 gap-2.5 pt-4 border-t border-neutral-100 text-xs text-neutral-500">
             <div className="flex items-center">
-              <Truck className="mr-2.5 h-4.5 w-4.5 text-neutral-400" />
+              <Truck className="mr-2.5 h-4.5 w-4.5 text-gold-500" />
               <span>Free Delivery across India</span>
             </div>
             <div className="flex items-center">
-              <RefreshCw className="mr-2.5 h-4.5 w-4.5 text-neutral-400" />
+              <RefreshCw className="mr-2.5 h-4.5 w-4.5 text-gold-500" />
               <span>Easy 7-day exchanges on manufacturing defects</span>
             </div>
             <div className="flex items-center">
-              <ShieldCheck className="mr-2.5 h-4.5 w-4.5 text-neutral-400" />
+              <ShieldCheck className="mr-2.5 h-4.5 w-4.5 text-gold-500" />
               <span>Direct WhatsApp assistance for ordering questions</span>
             </div>
           </div>
@@ -225,7 +225,7 @@ const ProductDetails = () => {
       {related.length > 0 && (
         <section className="pt-12 border-t border-neutral-100">
           <div className="space-y-2 mb-6">
-            <h2 className="text-xl font-bold uppercase tracking-wider text-black">Related Timepieces</h2>
+            <h2 className="text-xl font-bold uppercase tracking-wider text-primary-900">Related Timepieces</h2>
             <p className="text-xs text-neutral-500">You might also like these watches from {product.category} collection</p>
           </div>
           
