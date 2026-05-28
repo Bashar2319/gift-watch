@@ -81,7 +81,7 @@ const Navbar = () => {
             <Link to="/cart" className={`relative p-2 transition-colors duration-200 ${isActive('/cart') ? 'text-primary-800' : 'text-neutral-600 hover:text-gold-500'}`}>
               <ShoppingBag className="h-6 w-6" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-gold-500 text-[10px] font-bold text-white shadow-sm border border-white">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary-800 text-[10px] font-bold text-white shadow-sm border border-white">
                   {cartCount}
                 </span>
               )}
@@ -116,7 +116,7 @@ const Navbar = () => {
             <Link to="/cart" className={`relative p-2 ${isActive('/cart') ? 'text-primary-800' : 'text-neutral-600'}`}>
               <ShoppingBag className="h-6 w-6" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-gold-500 text-[10px] font-bold text-white shadow-sm border border-white">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary-800 text-[10px] font-bold text-white shadow-sm border border-white">
                   {cartCount}
                 </span>
               )}

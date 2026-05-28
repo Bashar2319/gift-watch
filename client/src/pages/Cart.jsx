@@ -23,7 +23,7 @@ const Cart = () => {
         </div>
         <Link
           to="/shop"
-          className="inline-flex items-center rounded-full bg-primary-800 px-6 py-3 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md animate-bounce"
+          className="inline-flex items-center rounded-full bg-primary-800 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md animate-bounce"
         >
           Explore collection
         </Link>
