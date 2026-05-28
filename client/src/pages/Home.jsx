@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import api from '../services/api';
 import ProductCard from '../components/ProductCard';
 import ProductSkeleton from '../components/ProductSkeleton';
-import { ArrowRight, Watch, Award, ShieldCheck, Heart } from 'lucide-react';
+import { ArrowRight, Watch, Award, ShieldCheck, Heart, Gift } from 'lucide-react';
 
 const Home = () => {
   const [featured, setFeatured] = useState([]);
@@ -41,36 +41,83 @@ const Home = () => {
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-r from-primary-900 via-primary-950 to-neutral-950 text-white h-[500px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-80">
+      <section className="relative bg-gradient-to-r from-primary-950 via-primary-900 to-neutral-950 text-white min-h-[580px] lg:h-[650px] flex items-center overflow-hidden py-12">
+        <div className="absolute inset-0 opacity-80 z-0">
           <img
-            src="/hero_watch_bg.png"
-            alt="Hero Watch"
+            src="/lucknow_watch_hero_bg.png"
+            alt="Hero Watch Lucknow"
             className="w-full h-full object-cover object-right md:object-center"
           />
           {/* Subtle gradient overlay to fade to dark on the left where text resides */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/75 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 md:via-primary-950/50 to-transparent"></div>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full z-10">
-          <div className="max-w-md space-y-6 animate-fadeIn">
-            <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-primary-850 px-3 py-1 rounded-full border border-gold-500/25 w-max block">
-              Gift Watch Lucknow
-            </span>
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl uppercase font-sans leading-tight">
-              Time Defined By <span className="text-gold-400 font-extrabold">Elegance</span>
-            </h1>
-            <p className="text-base text-neutral-300">
-              Discover our curated range of minimal, casual, smart, and luxury timepieces. Built for precision. Styled for you.
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col justify-center h-full">
+          <div className="max-w-2xl space-y-6 animate-fadeIn">
+            
+            {/* Top Brand Logo Header */}
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/logo.jpg" 
+                alt="Gift Watch Logo" 
+                className="h-12 w-12 rounded-full border-2 border-gold-500 object-cover shadow-md" 
+              />
+              <div>
+                <span className="block text-xs font-bold tracking-[0.25em] text-gold-400 font-sans leading-none">GIFT WATCH</span>
+                <span className="block text-[8px] font-bold tracking-[0.38em] text-gold-500 font-sans leading-none mt-1">LUCKNOW</span>
+              </div>
+            </div>
+
+            {/* Subtitle */}
+            <div className="space-y-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-gold-400 block">
+                TIME. ELEGANCE. LEGACY.
+              </span>
+              <h1 className="text-4xl font-extrabold tracking-wide sm:text-5xl uppercase font-sans leading-tight">
+                CRAFTED TO <br/>
+                <span className="text-gold-400 font-black">LEAVE AN IMPRESSION</span>
+              </h1>
+            </div>
+
+            {/* Horizontal ornament divider line */}
+            <div className="flex items-center space-x-3 py-1">
+              <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-500/50"></div>
+              <div className="text-gold-500 text-[10px] tracking-widest">❖</div>
+              <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-500/50"></div>
+            </div>
+
+            {/* Description */}
+            <p className="text-sm sm:text-base text-neutral-300 max-w-lg leading-relaxed">
+              Curated timepieces for those who value precision, style, and timeless sophistication.
             </p>
+
+            {/* Action button */}
             <div className="pt-2">
               <Link
                 to="/shop"
-                className="inline-flex items-center rounded-full bg-gold-500 px-6 py-3 text-xs font-bold uppercase tracking-wider text-primary-950 hover:bg-gold-400 hover:scale-105 transition-all shadow-lg shadow-gold-500/10 group"
+                className="inline-flex items-center rounded border border-gold-500/80 px-6 py-3 text-xs font-bold uppercase tracking-wider text-gold-400 hover:bg-gold-500 hover:text-primary-950 hover:border-gold-500 transition-all duration-300 group shadow-md"
               >
-                Explore Shop
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform text-primary-950" />
+                Explore Collection
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform text-gold-400 group-hover:text-primary-950" />
               </Link>
             </div>
+
+            {/* Bottom Highlights row */}
+            <div className="mt-12 pt-6 border-t border-gold-500/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium tracking-wider text-gold-400/90">
+              <div className="flex items-center space-x-2">
+                <Watch className="h-4.5 w-4.5 text-gold-500" />
+                <span className="uppercase text-[9px] tracking-widest font-bold">Premium Quality</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <ShieldCheck className="h-4.5 w-4.5 text-gold-500" />
+                <span className="uppercase text-[9px] tracking-widest font-bold">Authentic Timepieces</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Gift className="h-4.5 w-4.5 text-gold-500" />
+                <span className="uppercase text-[9px] tracking-widest font-bold">Perfect For Every Occasion</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
