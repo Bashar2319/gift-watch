@@ -42,12 +42,14 @@ const Home = () => {
     <div className="space-y-16 pb-16">
       {/* Hero Banner */}
       <section className="relative bg-gradient-to-r from-primary-900 via-primary-950 to-neutral-950 text-white h-[500px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-25">
+        <div className="absolute inset-0 opacity-80">
           <img
-            src="https://images.unsplash.com/photo-1490633874781-1c63cc424610?auto=format&fit=crop&q=80&w=1600"
+            src="/hero_watch_bg.png"
             alt="Hero Watch"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-right md:object-center"
           />
+          {/* Subtle gradient overlay to fade to dark on the left where text resides */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/75 to-transparent"></div>
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="max-w-md space-y-6 animate-fadeIn">
