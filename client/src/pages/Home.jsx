@@ -31,8 +31,6 @@ const Home = () => {
 
   const categories = [
     { name: 'Analog', image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=400' },
-    { name: 'Digital', image: 'https://images.unsplash.com/photo-1613941490217-062e58bf4e75?auto=format&fit=crop&q=80&w=400' },
-    { name: 'Smart', image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&q=80&w=400' },
     { name: 'Luxury', image: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=400' },
     { name: 'Sports', image: 'https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&q=80&w=400' },
     { name: 'Casual', image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=400' },

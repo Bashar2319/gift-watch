@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['Analog', 'Digital', 'Smart', 'Luxury', 'Sports', 'Casual'],
+      enum: ['Analog', 'Luxury', 'Sports', 'Casual'],
     },
     price: { type: Number, required: true, min: 0 },
     originalPrice: { type: Number, default: 0 }, // for showing discount

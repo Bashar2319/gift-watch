@@ -448,7 +448,7 @@ const AdminDashboard = () => {
                           onChange={handleInputChange}
                           className="w-full border border-neutral-200 px-3 py-2.5 text-sm focus:border-black focus:outline-none bg-white"
                         >
-                          {['Analog', 'Digital', 'Smart', 'Luxury', 'Sports', 'Casual'].map((cat) => (
+                          {['Analog', 'Luxury', 'Sports', 'Casual'].map((cat) => (
                             <option key={cat} value={cat}>{cat}</option>
                           ))}
                         </select>
