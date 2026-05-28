@@ -191,7 +191,7 @@ const Home = () => {
                 <Award className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gold-400">100% Genuine Watches</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gold-400">100% Premium Watches</h3>
                 <p className="mt-1 text-xs text-neutral-350 leading-relaxed">We source directly from official brand distributors.</p>
               </div>
             </div>
