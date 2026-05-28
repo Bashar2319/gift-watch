@@ -27,8 +27,8 @@ const Contact = () => {
   };
 
   const handleWhatsAppChat = () => {
-    const waNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210';
-    const message = encodeURIComponent("Hello Chrono! I'm interested in purchasing a watch and had some questions.");
+    const waNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '917081271482';
+    const message = encodeURIComponent("Hello Gift Watch! I'm interested in purchasing a watch and had some questions.");
     window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
   };
 
@@ -56,7 +56,7 @@ const Contact = () => {
                 <MapPin className="mr-3 h-5 w-5 text-neutral-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <span className="font-bold text-black">Store Location</span>
-                  <p className="mt-1">123 Watch Street, Time Square, Mumbai, Maharashtra - 400001</p>
+                  <p className="mt-1">Opposite lane of burma biscuit company, Aminabad, Lucknow (Near Akhil paper mart)</p>
                 </div>
               </li>
 
@@ -74,7 +74,7 @@ const Contact = () => {
                 <div>
                   <span className="font-bold text-black">Phone Contact</span>
                   <p className="mt-1">
-                    <a href="tel:+919876543210" className="hover:text-black hover:underline">+91 98765 43210</a>
+                    <a href="tel:+917081271482" className="hover:text-black hover:underline">+91 70812 71482</a>
                   </p>
                 </div>
               </li>
@@ -84,7 +84,7 @@ const Contact = () => {
                 <div>
                   <span className="font-bold text-black">Email Address</span>
                   <p className="mt-1">
-                    <a href="mailto:support@chrono.com" className="hover:text-black hover:underline">support@chrono.com</a>
+                    <a href="mailto:pro4134@gmail.com" className="hover:text-black hover:underline">pro4134@gmail.com</a>
                   </p>
                 </div>
               </li>

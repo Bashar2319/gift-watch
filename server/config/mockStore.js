@@ -104,22 +104,22 @@ const mockStore = {
     {
       _id: 'user1',
       name: 'Admin User',
-      email: 'admin@chrono.com',
+      email: 'admin@giftwatch.com',
       password: '$2a$10$wKlh8o6FidSg4F03lE84.O32c4jP6h1w503f12457812ab5678912', // crypted hash
       role: 'admin',
       addresses: [
         {
           _id: 'addr1',
-          fullName: 'Admin Chrono',
-          phone: '+91 98765 43210',
-          street: '123 Watch Street',
-          city: 'Mumbai',
-          state: 'Maharashtra',
-          pincode: '400001',
+          fullName: 'Admin Gift Watch',
+          phone: '+91 70812 71482',
+          street: 'Opposite lane of burma biscuit company, Aminabad',
+          city: 'Lucknow',
+          state: 'Uttar Pradesh',
+          pincode: '226018',
           isDefault: true,
         }
       ],
-      phone: '+91 98765 43210',
+      phone: '+91 70812 71482',
     },
     {
       _id: 'user2',

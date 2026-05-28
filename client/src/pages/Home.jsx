@@ -52,7 +52,7 @@ const Home = () => {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="max-w-md space-y-6">
             <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-              Chrono Co. Collection
+              Gift Watch Collection
             </span>
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl uppercase">
               Time Defined By Elegance

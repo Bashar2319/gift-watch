@@ -23,7 +23,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex flex-shrink-0 items-center">
             <Link to="/" className="text-xl font-bold tracking-widest text-black">
-              CHRONO
+              GIFT WATCH
             </Link>
           </div>
 

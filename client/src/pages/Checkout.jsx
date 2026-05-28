@@ -122,25 +122,27 @@ const Checkout = () => {
       const { data: order } = await api.post('/orders', orderData);
       
       // 2. Prepare WhatsApp pre-filled text
-      const waNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210';
+      const waNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '917081271482';
       const itemsListText = cartItems
         .map((item) => `🕐 ${item.brand} - ${item.name} x${item.quantity} (₹${item.price.toLocaleString('en-IN')})`)
         .join('\n');
 
-      const messageText = `Hello CHRONO! I'd like to place an order:
+      const messageText = `Hello Gift Watch! I'd like to place an order:
 
 *Order ID:* #${order._id.substring(order._id.length - 6).toUpperCase()}
 *Items:*
 ${itemsListText}
 
-*Total Price:* ₹${cartTotal.toLocaleString('en-IN')}
+*Total Price:* ₹${cartTotal.toLocaleString('en-IN')} (Prepaid + Delivery charges)
 
 *Shipping Address:*
 Name: ${orderData.shippingAddress.fullName}
 Phone: ${orderData.shippingAddress.phone}
 Address: ${orderData.shippingAddress.street}, ${orderData.shippingAddress.city}, ${orderData.shippingAddress.state} - ${orderData.shippingAddress.pincode}
 
-*Notes:* ${notes || 'None'}`;
+*Notes:* ${notes || 'None'}
+
+We deliver to doorstep all over India! Best watches keep shopping from @giftwatch_lucknow.`;
 
       const encodedMessage = encodeURIComponent(messageText);
       const waUrl = `https://wa.me/${waNumber}?text=${encodedMessage}`;

@@ -135,7 +135,7 @@ const Dashboard = () => {
       .map((item) => `🕐 ${item.name} x${item.quantity} (₹${item.price.toLocaleString('en-IN')})`)
       .join('\n');
 
-    const messageText = `Hello CHRONO! I'm following up on my order:
+    const messageText = `Hello Gift Watch! I'm following up on my order:
 
 *Order ID:* #${order._id.substring(order._id.length - 6).toUpperCase()}
 *Items:*

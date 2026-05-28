@@ -88,7 +88,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   if (global.useMockDb) {
     const user = mockStore.users.find((u) => u.email === email.toLowerCase());
-    const isMockAdmin = (email.toLowerCase() === 'admin@chrono.com' && password === 'admin123') ||
+    const isMockAdmin = (email.toLowerCase() === 'admin@giftwatch.com' && password === 'admin123') ||
                         (email.toLowerCase() === 'pro4134@gmail.com' && password === '7081271482s');
 
     if (user && (await bcrypt.compare(password, user.password) || isMockAdmin)) {

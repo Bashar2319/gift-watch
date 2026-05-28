@@ -11,10 +11,10 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <Link to="/" className="text-xl font-bold tracking-widest text-black">
-              CHRONO
+              GIFT WATCH
             </Link>
             <p className="text-sm text-neutral-500 max-w-xs">
-              Handpicked watches crafted for style, precision, and everyday elegance. Get premium watches delivered right to your doorstep.
+              Prepaid delivery directly to your doorstep all over India. Keep shopping for the best watches from @giftwatch_lucknow.
             </p>
           </div>
 
@@ -29,7 +29,14 @@ const Footer = () => {
                 <Link to="/contact" className="hover:text-black transition-colors">Contact Support</Link>
               </li>
               <li>
-                <Link to="/login" className="hover:text-black transition-colors">My Account</Link>
+                <a 
+                  href="https://www.instagram.com/reel/DYys8WUTtm1/?igsh=MTQ5OHIxYXdyeXRjcg==" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-black transition-colors block text-neutral-500 hover:text-black"
+                >
+                  Follow on Instagram
+                </a>
               </li>
             </ul>
           </div>
@@ -44,7 +51,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start text-neutral-500">
                 <MapPin className="mr-2 h-4 w-4 text-neutral-400 mt-0.5 flex-shrink-0" />
-                <span>123 Watch Street, Time Square, Mumbai, 400001</span>
+                <span>Opposite lane of burma biscuit company, Aminabad, Lucknow (Near Akhil paper mart)</span>
               </li>
             </ul>
           </div>
@@ -55,11 +62,11 @@ const Footer = () => {
             <ul className="mt-4 space-y-2 text-sm">
               <li className="flex items-center">
                 <Phone className="mr-2 h-4 w-4 text-neutral-400 flex-shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-black transition-colors">+91 98765 43210</a>
+                <a href="tel:+917081271482" className="hover:text-black transition-colors">+91 70812 71482</a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-4 w-4 text-neutral-400 flex-shrink-0" />
-                <a href="mailto:support@chrono.com" className="hover:text-black transition-colors">support@chrono.com</a>
+                <a href="mailto:pro4134@gmail.com" className="hover:text-black transition-colors">pro4134@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -67,7 +74,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-400">
-          <p>&copy; {new Date().getFullYear()} CHRONO. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} GIFT WATCH. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <span className="text-neutral-500 font-medium">WhatsApp Direct Ordering Enabled</span>
           </div>
