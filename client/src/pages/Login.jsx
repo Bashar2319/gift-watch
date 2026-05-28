@@ -83,9 +83,9 @@ const Login = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex items-center justify-center rounded-full bg-primary-800 py-3 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors disabled:opacity-50 shadow-sm animate-pulse"
+            className="w-full flex items-center justify-center rounded-full bg-primary-800 py-3 text-xs font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900 transition-colors disabled:opacity-50 shadow-sm animate-pulse"
           >
-            {isSubmitting ? 'Logging in...' : 'Sign In'} <ArrowRight className="ml-1.5 h-4 w-4 text-gold-400" />
+            {isSubmitting ? 'Logging in...' : 'Sign In'} <ArrowRight className="ml-1.5 h-4 w-4 text-gold-300" />
           </button>
         </form>
 

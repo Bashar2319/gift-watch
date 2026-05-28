@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
           ) : (
             <>
               {product.isTrending && (
-                <span className="bg-primary-800 text-[10px] font-extrabold uppercase tracking-widest text-gold-300 px-2.5 py-1 w-max rounded shadow-sm border border-gold-500/20">
+                <span className="bg-gold-500 text-[10px] font-extrabold uppercase tracking-widest text-primary-950 px-2.5 py-1 w-max rounded shadow-sm border border-gold-600/20">
                   Trending
                 </span>
               )}
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
 
       {/* Info */}
       <div className="flex flex-1 flex-col p-4">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-gold-600">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-gold-650">
           {product.brand}
         </span>
         <h3 className="mt-1 text-sm font-semibold text-neutral-900 line-clamp-1 hover:text-primary-850">
@@ -69,7 +69,7 @@ const ProductCard = ({ product }) => {
               ₹{product.price.toLocaleString('en-IN')}
             </span>
             {product.originalPrice > product.price && (
-              <span className="text-xs text-neutral-450 line-through">
+              <span className="text-xs text-neutral-455 line-through">
                 ₹{product.originalPrice.toLocaleString('en-IN')}
               </span>
             )}
@@ -81,7 +81,7 @@ const ProductCard = ({ product }) => {
             className={`p-2 rounded-full border transition-all duration-300 shadow-sm ${
               outOfStock
                 ? 'border-neutral-200 text-neutral-300 cursor-not-allowed'
-                : 'border-primary-100 text-primary-800 hover:bg-primary-800 hover:text-gold-100 hover:border-primary-800'
+                : 'border-primary-100 text-primary-800 hover:bg-primary-800 hover:text-white hover:border-primary-800'
             }`}
             title={outOfStock ? 'Out of Stock' : 'Add to Cart'}
           >

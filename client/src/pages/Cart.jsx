@@ -122,9 +122,9 @@ const Cart = () => {
           <div className="mt-6">
             <button
               onClick={handleCheckout}
-              className="w-full flex items-center justify-center rounded-full bg-primary-800 py-4 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md"
+              className="w-full flex items-center justify-center rounded-full bg-primary-800 py-4 text-xs font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md"
             >
-              Checkout Order <ArrowRight className="ml-2 h-4 w-4 text-gold-450" />
+              Checkout Order <ArrowRight className="ml-2 h-4 w-4 text-gold-300" />
             </button>
           </div>
 

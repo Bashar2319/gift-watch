@@ -326,7 +326,7 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
                   </button>
                   <button
                     type="submit"
-                    className="bg-primary-800 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors"
+                    className="bg-primary-800 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900 transition-colors"
                   >
                     Save Address
                   </button>

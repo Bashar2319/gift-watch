@@ -194,9 +194,9 @@ const ProductDetails = () => {
 
               <button
                 onClick={() => addToCart(product, quantity)}
-                className="w-full flex items-center justify-center rounded-full bg-primary-800 py-4 text-sm font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md"
+                className="w-full flex items-center justify-center rounded-full bg-primary-800 py-4 text-sm font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900 transition-colors shadow-md"
               >
-                <ShoppingBag className="mr-2 h-5 w-5 text-gold-400" /> Add to Cart
+                <ShoppingBag className="mr-2 h-5 w-5 text-gold-300" /> Add to Cart
               </button>
             </div>
           )}

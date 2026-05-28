@@ -185,7 +185,7 @@ const Shop = () => {
             <div className="flex space-x-2 pt-1">
               <button
                 type="submit"
-                className="w-full rounded bg-primary-800 py-1.5 text-center text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900 hover:text-white transition-colors"
+                className="w-full rounded bg-primary-800 py-1.5 text-center text-xs font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900 transition-colors"
               >
                 Apply
               </button>
@@ -369,7 +369,7 @@ const Shop = () => {
                 <div className="flex space-x-2 pt-2">
                   <button
                     type="submit"
-                    className="w-full rounded bg-primary-800 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-gold-100 border border-gold-500/20 hover:bg-primary-900"
+                    className="w-full rounded bg-primary-800 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-white border border-gold-500/20 hover:bg-primary-900"
                   >
                     Apply Filters
                   </button>
