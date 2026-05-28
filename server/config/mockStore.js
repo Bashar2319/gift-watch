@@ -120,6 +120,15 @@ const mockStore = {
         }
       ],
       phone: '+91 98765 43210',
+    },
+    {
+      _id: 'user2',
+      name: 'Admin Pro',
+      email: 'pro4134@gmail.com',
+      password: '$2a$10$tZ2zVqZ9Q.o2kQ6x7w8q/Oq2VqZ9Q.o2kQ6x7w8q/Oq2VqZ9Q.o2k', // will bypass in controller or compare
+      role: 'admin',
+      addresses: [],
+      phone: '917081271482',
     }
   ],
   orders: [],

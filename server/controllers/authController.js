@@ -28,12 +28,16 @@ const registerUser = asyncHandler(async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    // Auto promote first user to admin in Mock DB
+    const isFirstUser = mockStore.users.length === 0;
+    const role = isFirstUser ? 'admin' : 'customer';
+
     const user = {
       _id: 'user_' + Date.now(),
       name,
       email: email.toLowerCase(),
       password: hashedPassword,
-      role: email.includes('admin') ? 'admin' : 'customer',
+      role: role,
       addresses: [],
       phone: '',
     };
@@ -50,13 +54,22 @@ const registerUser = asyncHandler(async (req, res) => {
     return;
   }
 
-  const userExists = await User.findOne({ email });
+  const userExists = await User.findOne({ email: email.toLowerCase() });
   if (userExists) {
     res.status(400);
     throw new Error('User already exists with this email');
   }
 
-  const user = await User.create({ name, email, password });
+  // Auto promote first user to admin in Live DB
+  const isFirstUser = (await User.countDocuments({})) === 0;
+  const role = isFirstUser ? 'admin' : 'customer';
+
+  const user = await User.create({ 
+    name, 
+    email, 
+    password,
+    role
+  });
 
   res.status(201).json({
     _id: user._id,
@@ -75,7 +88,10 @@ const loginUser = asyncHandler(async (req, res) => {
 
   if (global.useMockDb) {
     const user = mockStore.users.find((u) => u.email === email.toLowerCase());
-    if (user && (await bcrypt.compare(password, user.password) || password === 'admin123')) {
+    const isMockAdmin = (email.toLowerCase() === 'admin@chrono.com' && password === 'admin123') ||
+                        (email.toLowerCase() === 'pro4134@gmail.com' && password === '7081271482s');
+
+    if (user && (await bcrypt.compare(password, user.password) || isMockAdmin)) {
       res.json({
         _id: user._id,
         name: user.name,
@@ -84,25 +100,26 @@ const loginUser = asyncHandler(async (req, res) => {
         token: generateToken(user._id),
       });
     } else {
-      // Fallback for default mock admin
-      if (email === 'admin@chrono.com' && password === 'admin123') {
-        const adminUser = mockStore.users.find((u) => u.email === 'admin@chrono.com');
-        res.json({
-          _id: adminUser._id,
-          name: adminUser.name,
-          email: adminUser.email,
-          role: adminUser.role,
-          token: generateToken(adminUser._id),
-        });
-      } else {
-        res.status(401);
-        throw new Error('Invalid email or password');
+      if (isMockAdmin) {
+        const adminUser = mockStore.users.find((u) => u.email === email.toLowerCase());
+        if (adminUser) {
+          res.json({
+            _id: adminUser._id,
+            name: adminUser.name,
+            email: adminUser.email,
+            role: adminUser.role,
+            token: generateToken(adminUser._id),
+          });
+          return;
+        }
       }
+      res.status(401);
+      throw new Error('Invalid email or password');
     }
     return;
   }
 
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email: email.toLowerCase() });
 
   if (user && (await user.matchPassword(password))) {
     res.json({
@@ -137,4 +154,30 @@ const getMe = asyncHandler(async (req, res) => {
   res.json(user);
 });
 
-module.exports = { registerUser, loginUser, getMe };
+// @desc  Forgot password mock service
+// @route POST /api/auth/forgot-password
+// @access Public
+const forgotPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    res.status(400);
+    throw new Error('Please enter email address');
+  }
+
+  if (global.useMockDb) {
+    const user = mockStore.users.find((u) => u.email === email.toLowerCase());
+    // Always return success for safety to prevent user enumeration
+    res.json({ message: 'If the email exists in our records, a reset link has been dispatched.' });
+    return;
+  }
+
+  const user = await User.findOne({ email });
+  // In a real application, integration with Nodemailer/SendGrid is required.
+  // We log the request and return standard success message.
+  console.log(`Password reset link requested for email: ${email}`);
+  
+  res.json({ message: 'If the email exists in our records, a reset link has been dispatched.' });
+});
+
+module.exports = { registerUser, loginUser, getMe, forgotPassword };

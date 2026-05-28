@@ -22,6 +22,7 @@ const Register = lazy(() => import('./pages/Register'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Contact = lazy(() => import('./pages/Contact'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
+const ForgotPassword = lazy(() => import('./pages/ForgotPassword'));
 
 // Loading Page Fallback
 const PageLoader = () => (
@@ -48,6 +49,17 @@ function App() {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+
+                  {/* Customer Guarded Checkout */}
+                  <Route
+                    path="/checkout"
+                    element={
+                      <ProtectedRoute>
+                        <Checkout />
+                      </ProtectedRoute>
+                    }
+                  />
 
                   {/* Customer Guarded Dashboard */}
                   <Route
