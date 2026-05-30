@@ -40,52 +40,52 @@ const Home = () => {
     <div className="space-y-16 pb-16">
       {/* Hero Banner */}
       <section className="relative bg-gradient-to-r from-primary-950 via-primary-900 to-neutral-950 text-white min-h-[580px] lg:h-[650px] flex items-center overflow-hidden py-12">
-        <div className="absolute inset-0 z-0 bg-primary-990">
+        <div className="absolute inset-0 z-0 bg-primary-950">
           <img
-            src="/lucknow_watch_hero_bg_v2.png"
+            src="/lucknow_watch_hero_bg_v3.png"
             alt="Hero Watch Lucknow"
-            className="w-full h-full object-cover object-right md:object-center opacity-45 md:opacity-75"
+            className="w-full h-full object-cover object-right md:object-center opacity-55 md:opacity-85"
           />
           {/* Subtle gradient overlay to fade to dark on the left where text resides */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/85 via-primary-950/40 to-primary-950/90 md:bg-gradient-to-r md:from-primary-950 md:via-primary-950/70 md:to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/90 via-primary-950/40 to-primary-950/90 md:bg-gradient-to-r md:from-primary-950 md:via-primary-950/80 md:to-transparent"></div>
         </div>
         
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col justify-center h-full">
-          <div className="max-w-2xl space-y-6 animate-fadeIn">
+          <div className="max-w-2xl space-y-6 sm:space-y-8 animate-fadeIn">
             
             {/* Top Brand Logo Header */}
-            <div className="flex items-center space-x-3 mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <div className="flex items-center space-x-3 mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               <img 
                 src="/logo.jpg" 
                 alt="Gift Watch Logo" 
-                className="h-12 w-12 rounded-full border-2 border-gold-500 object-cover shadow-md" 
+                className="h-12 w-12 rounded-full border-2 border-gold-300 object-cover shadow-md" 
               />
               <div>
-                <span className="block text-xs font-bold tracking-[0.25em] text-amber-100 font-sans leading-none">GIFT WATCH</span>
-                <span className="block text-[8px] font-bold tracking-[0.38em] text-gold-500 font-sans leading-none mt-1">LUCKNOW</span>
+                <span className="block text-xs font-bold tracking-[0.25em] text-gold-100 font-sans leading-none">GIFT WATCH</span>
+                <span className="block text-[8px] font-bold tracking-[0.38em] text-gold-400 font-sans leading-none mt-1">LUCKNOW</span>
               </div>
             </div>
 
-            {/* Subtitle */}
-            <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-[0.35em] text-amber-100 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            {/* Subtitle / Tagline & Headline */}
+            <div className="space-y-4">
+              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.4em] text-gold-200 bg-gold-500/10 border border-gold-500/20 px-3.5 py-1.5 rounded-full shadow-sm drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.8)]">
                 TIME. ELEGANCE. LEGACY.
               </span>
-              <h1 className="text-4xl font-extrabold tracking-wide sm:text-5xl uppercase font-sans leading-tight drop-shadow-[0_3px_8px_rgba(0,0,0,0.95)]">
+              <h1 className="text-4xl sm:text-6xl font-black tracking-tight uppercase font-sans leading-none drop-shadow-[0_4px_10px_rgba(0,0,0,0.95)]">
                 CRAFTED TO <br/>
-                <span className="text-amber-100 font-black">LEAVE AN IMPRESSION</span>
+                <span className="text-gold-200 font-black text-3xl sm:text-5xl block mt-2 tracking-wide">LEAVE AN IMPRESSION</span>
               </h1>
             </div>
 
             {/* Horizontal ornament divider line */}
             <div className="flex items-center space-x-3 py-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-              <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-500/50"></div>
-              <div className="text-gold-500 text-[10px] tracking-widest">❖</div>
-              <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-500/50"></div>
+              <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-300/40"></div>
+              <div className="text-gold-300 text-[10px] tracking-widest">❖</div>
+              <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-300/40"></div>
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-white/95 max-w-lg leading-relaxed drop-shadow-[0_2px_5px_rgba(0,0,0,0.9)] font-medium">
+            <p className="text-sm sm:text-base text-white/95 max-w-lg leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] font-medium">
               Curated timepieces for those who value precision, style, and timeless sophistication.
             </p>
 
@@ -93,25 +93,25 @@ const Home = () => {
             <div className="pt-2">
               <Link
                 to="/shop"
-                className="inline-flex items-center rounded border border-gold-500/80 px-6 py-3 text-xs font-bold uppercase tracking-wider text-amber-100 hover:bg-gold-500 hover:text-primary-950 hover:border-gold-500 transition-all duration-300 group shadow-md"
+                className="inline-flex items-center rounded-full bg-gradient-to-r from-gold-500 to-gold-300 px-8 py-4 text-xs font-bold uppercase tracking-widest text-primary-900 hover:from-gold-450 hover:to-gold-200 hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-gold-500/15 group"
               >
                 Explore Collection
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform text-amber-100 group-hover:text-primary-950" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1.5 transition-transform text-primary-900" />
               </Link>
             </div>
 
-            {/* Bottom Highlights row */}
-            <div className="mt-12 pt-6 border-t border-gold-500/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium tracking-wider text-amber-100/90">
+             {/* Bottom Highlights row */}
+            <div className="mt-12 pt-6 border-t border-gold-500/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium tracking-wider text-gold-200/90">
               <div className="flex items-center space-x-2">
-                <Watch className="h-4.5 w-4.5 text-gold-500" />
+                <Watch className="h-4.5 w-4.5 text-gold-300" />
                 <span className="uppercase text-[9px] tracking-widest font-bold">Premium Quality</span>
               </div>
               <div className="flex items-center space-x-2">
-                <ShieldCheck className="h-4.5 w-4.5 text-gold-500" />
+                <ShieldCheck className="h-4.5 w-4.5 text-gold-300" />
                 <span className="uppercase text-[9px] tracking-widest font-bold">Authentic Timepieces</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Gift className="h-4.5 w-4.5 text-gold-500" />
+                <Gift className="h-4.5 w-4.5 text-gold-300" />
                 <span className="uppercase text-[9px] tracking-widest font-bold">Perfect For Every Occasion</span>
               </div>
             </div>
