@@ -42,7 +42,7 @@ const Home = () => {
       <section className="relative bg-gradient-to-r from-primary-950 via-primary-900 to-neutral-950 text-white min-h-[580px] lg:h-[650px] flex items-center overflow-hidden py-12">
         <div className="absolute inset-0 z-0 bg-primary-990">
           <img
-            src="/lucknow_watch_hero_bg.png"
+            src="/lucknow_watch_hero_bg_v2.png"
             alt="Hero Watch Lucknow"
             className="w-full h-full object-cover object-right md:object-center opacity-45 md:opacity-75"
           />
