@@ -154,7 +154,9 @@ const getMe = asyncHandler(async (req, res) => {
   res.json(user);
 });
 
-// @desc  Forgot password mock service
+const sendEmail = require('../utils/sendEmail');
+
+// @desc  Forgot password service
 // @route POST /api/auth/forgot-password
 // @access Public
 const forgotPassword = asyncHandler(async (req, res) => {
@@ -165,19 +167,81 @@ const forgotPassword = asyncHandler(async (req, res) => {
     throw new Error('Please enter email address');
   }
 
-  if (global.useMockDb) {
-    const user = mockStore.users.find((u) => u.email === email.toLowerCase());
-    // Always return success for safety to prevent user enumeration
+  const user = await User.findOne({ email: email.toLowerCase() });
+  
+  // Always return success for safety to prevent user enumeration
+  if (!user) {
     res.json({ message: 'If the email exists in our records, a reset link has been dispatched.' });
     return;
   }
 
-  const user = await User.findOne({ email });
-  // In a real application, integration with Nodemailer/SendGrid is required.
-  // We log the request and return standard success message.
-  console.log(`Password reset link requested for email: ${email}`);
-  
+  // Generate short-lived reset token (expires in 15 minutes)
+  const resetToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET || 'fallback_secret', { expiresIn: '15m' });
+  const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+  const resetUrl = `${clientUrl.replace(/\/$/, '')}/forgot-password?token=${resetToken}`;
+
+  const htmlContent = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #dbece3; border-radius: 8px; background-color: #f0f6f3;">
+      <h2 style="color: #0f3e27; text-align: center; border-bottom: 2px solid #c29b38; padding-bottom: 10px;">Gift Watch Lucknow — Password Recovery</h2>
+      <p style="color: #072719; font-size: 14px; line-height: 1.5;">Hello <strong>${user.name}</strong>,</p>
+      <p style="color: #072719; font-size: 14px; line-height: 1.5;">We received a request to reset your password. Click the button below to set a new password. This recovery link is valid for <strong>15 minutes</strong>:</p>
+      <div style="text-align: center; margin: 25px 0;">
+        <a href="${resetUrl}" style="background-color: #0f3e27; color: #f6ebc4; border: 1px solid #c29b38; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 14px; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Reset Password</a>
+      </div>
+      <p style="color: #5fa37f; font-size: 11px; line-height: 1.4; border-top: 1px solid #dbece3; padding-top: 10px; margin-top: 20px;">
+        If you did not request this password recovery email, please ignore this message. Your password will remain unchanged.
+      </p>
+    </div>
+  `;
+
+  try {
+    await sendEmail({
+      to: user.email,
+      subject: 'Password Recovery Link - Gift Watch Lucknow',
+      html: htmlContent,
+    });
+    console.log(`Password reset link successfully sent to: ${email}`);
+  } catch (error) {
+    console.error(`Failed to send email to ${email}: ${error.message}`);
+    // Do not throw error to client to avoid enumeration leaks, just log internally
+  }
+
   res.json({ message: 'If the email exists in our records, a reset link has been dispatched.' });
 });
 
-module.exports = { registerUser, loginUser, getMe, forgotPassword };
+// @desc  Reset password service
+// @route POST /api/auth/reset-password
+// @access Public
+const resetPassword = asyncHandler(async (req, res) => {
+  const { token, password } = req.body;
+
+  if (!token || !password) {
+    res.status(400);
+    throw new Error('Invalid token or password missing');
+  }
+
+  if (password.length < 6) {
+    res.status(400);
+    throw new Error('Password must be at least 6 characters long');
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallback_secret');
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      res.status(404);
+      throw new Error('User not found');
+    }
+
+    user.password = password;
+    await user.save();
+
+    res.json({ message: 'Password updated successfully. You can now log in.' });
+  } catch (error) {
+    res.status(400);
+    throw new Error('Your password reset link is invalid or has expired.');
+  }
+});
+
+module.exports = { registerUser, loginUser, getMe, forgotPassword, resetPassword };
