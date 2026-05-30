@@ -150,13 +150,13 @@ We deliver to doorstep all over India! Best watches keep shopping from @giftwatc
       // 3. Clear customer cart locally
       clearCart();
 
-      // 4. Open WhatsApp deep link in new window
-      window.open(waUrl, '_blank');
+      // 4. Update route to dashboard so when user comes back, they land on their order history
+      navigate('/dashboard');
+
+      // 5. Redirect current tab to WhatsApp (bypasses browser pop-up blocker)
+      window.location.href = waUrl;
 
       toast.success('Order placed successfully! Redirecting to WhatsApp...');
-      
-      // 5. Route user to their orders list
-      navigate('/dashboard');
     } catch (error) {
       toast.error(error.message || 'Failed to place order');
     } finally {
