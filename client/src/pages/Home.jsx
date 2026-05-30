@@ -61,19 +61,19 @@ const Home = () => {
                 className="h-12 w-12 rounded-full border-2 border-gold-500 object-cover shadow-md" 
               />
               <div>
-                <span className="block text-xs font-bold tracking-[0.25em] text-gold-400 font-sans leading-none">GIFT WATCH</span>
+                <span className="block text-xs font-bold tracking-[0.25em] text-amber-100 font-sans leading-none">GIFT WATCH</span>
                 <span className="block text-[8px] font-bold tracking-[0.38em] text-gold-500 font-sans leading-none mt-1">LUCKNOW</span>
               </div>
             </div>
 
             {/* Subtitle */}
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-[0.35em] text-gold-400 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              <span className="text-xs font-bold uppercase tracking-[0.35em] text-amber-100 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 TIME. ELEGANCE. LEGACY.
               </span>
               <h1 className="text-4xl font-extrabold tracking-wide sm:text-5xl uppercase font-sans leading-tight drop-shadow-[0_3px_8px_rgba(0,0,0,0.95)]">
                 CRAFTED TO <br/>
-                <span className="text-gold-400 font-black">LEAVE AN IMPRESSION</span>
+                <span className="text-amber-100 font-black">LEAVE AN IMPRESSION</span>
               </h1>
             </div>
 
@@ -93,15 +93,15 @@ const Home = () => {
             <div className="pt-2">
               <Link
                 to="/shop"
-                className="inline-flex items-center rounded border border-gold-500/80 px-6 py-3 text-xs font-bold uppercase tracking-wider text-gold-400 hover:bg-gold-500 hover:text-primary-950 hover:border-gold-500 transition-all duration-300 group shadow-md"
+                className="inline-flex items-center rounded border border-gold-500/80 px-6 py-3 text-xs font-bold uppercase tracking-wider text-amber-100 hover:bg-gold-500 hover:text-primary-950 hover:border-gold-500 transition-all duration-300 group shadow-md"
               >
                 Explore Collection
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform text-gold-400 group-hover:text-primary-950" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform text-amber-100 group-hover:text-primary-950" />
               </Link>
             </div>
 
             {/* Bottom Highlights row */}
-            <div className="mt-12 pt-6 border-t border-gold-500/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium tracking-wider text-gold-400/90">
+            <div className="mt-12 pt-6 border-t border-gold-500/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium tracking-wider text-amber-100/90">
               <div className="flex items-center space-x-2">
                 <Watch className="h-4.5 w-4.5 text-gold-500" />
                 <span className="uppercase text-[9px] tracking-widest font-bold">Premium Quality</span>
