@@ -29,11 +29,15 @@ app.use(cors({
     // Allow requests with no origin (like mobile apps, curl, postman)
     if (!origin) return callback(null, true);
     
-    if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes('*')) {
+    // Allow localhost and any Vercel deployment domain (*.vercel.app)
+    const isLocalhost = origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:');
+    const isVercel = origin.endsWith('.vercel.app');
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || isLocalhost || isVercel || allowedOrigins.includes('*')) {
       callback(null, true);
     } else {
       console.warn(`Origin ${origin} blocked by CORS`);
-      callback(new Error('Not allowed by CORS'));
+      callback(null, false); // Pass false instead of an Error to avoid breaking the Express middleware flow
     }
   },
   credentials: true,
