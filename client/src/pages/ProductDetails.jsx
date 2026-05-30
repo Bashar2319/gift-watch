@@ -209,7 +209,7 @@ const ProductDetails = () => {
             </div>
             <div className="flex items-center">
               <RefreshCw className="mr-2.5 h-4.5 w-4.5 text-gold-500" />
-              <span>Easy 7-day exchanges on manufacturing defects</span>
+              <span>Easy 6 months free repair on manufacturing defects by us</span>
             </div>
             <div className="flex items-center">
               <ShieldCheck className="mr-2.5 h-4.5 w-4.5 text-gold-500" />

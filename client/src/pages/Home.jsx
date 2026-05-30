@@ -40,21 +40,21 @@ const Home = () => {
     <div className="space-y-16 pb-16">
       {/* Hero Banner */}
       <section className="relative bg-gradient-to-r from-primary-950 via-primary-900 to-neutral-950 text-white min-h-[580px] lg:h-[650px] flex items-center overflow-hidden py-12">
-        <div className="absolute inset-0 opacity-80 z-0">
+        <div className="absolute inset-0 z-0 bg-primary-990">
           <img
             src="/lucknow_watch_hero_bg.png"
             alt="Hero Watch Lucknow"
-            className="w-full h-full object-cover object-right md:object-center"
+            className="w-full h-full object-cover object-right md:object-center opacity-45 md:opacity-75"
           />
           {/* Subtle gradient overlay to fade to dark on the left where text resides */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 md:via-primary-950/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/85 via-primary-950/40 to-primary-950/90 md:bg-gradient-to-r md:from-primary-950 md:via-primary-950/70 md:to-transparent"></div>
         </div>
         
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col justify-center h-full">
           <div className="max-w-2xl space-y-6 animate-fadeIn">
             
             {/* Top Brand Logo Header */}
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center space-x-3 mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               <img 
                 src="/logo.jpg" 
                 alt="Gift Watch Logo" 
@@ -68,24 +68,24 @@ const Home = () => {
 
             {/* Subtitle */}
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-gold-400 block">
+              <span className="text-xs font-bold uppercase tracking-[0.35em] text-gold-400 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 TIME. ELEGANCE. LEGACY.
               </span>
-              <h1 className="text-4xl font-extrabold tracking-wide sm:text-5xl uppercase font-sans leading-tight">
+              <h1 className="text-4xl font-extrabold tracking-wide sm:text-5xl uppercase font-sans leading-tight drop-shadow-[0_3px_8px_rgba(0,0,0,0.95)]">
                 CRAFTED TO <br/>
                 <span className="text-gold-400 font-black">LEAVE AN IMPRESSION</span>
               </h1>
             </div>
 
             {/* Horizontal ornament divider line */}
-            <div className="flex items-center space-x-3 py-1">
+            <div className="flex items-center space-x-3 py-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
               <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-500/50"></div>
               <div className="text-gold-500 text-[10px] tracking-widest">❖</div>
               <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-500/50"></div>
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-neutral-300 max-w-lg leading-relaxed">
+            <p className="text-sm sm:text-base text-white/95 max-w-lg leading-relaxed drop-shadow-[0_2px_5px_rgba(0,0,0,0.9)] font-medium">
               Curated timepieces for those who value precision, style, and timeless sophistication.
             </p>
 
